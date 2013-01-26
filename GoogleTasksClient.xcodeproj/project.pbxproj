@@ -83,11 +83,9 @@
 		95F7255E16B4464A00193770 /* GoogleTasksClient */ = {
 			isa = PBXGroup;
 			children = (
-				95F7256716B4464A00193770 /* GoogleTasksClientAppDelegate.h */,
-				95F7256816B4464A00193770 /* GoogleTasksClientAppDelegate.m */,
-				95F7257016B4464A00193770 /* MainStoryboard.storyboard */,
-				95F7257316B4464A00193770 /* GoogleTasksClientViewController.h */,
-				95F7257416B4464A00193770 /* GoogleTasksClientViewController.m */,
+				95F7257D16B446D200193770 /* Views */,
+				95F7257C16B446A900193770 /* Classes */,
+				95F7257B16B4469800193770 /* Resources */,
 				95F7255F16B4464A00193770 /* Supporting Files */,
 			);
 			path = GoogleTasksClient;
@@ -105,6 +103,32 @@
 				95F7256E16B4464A00193770 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95F7257B16B4469800193770 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		95F7257C16B446A900193770 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				95F7256716B4464A00193770 /* GoogleTasksClientAppDelegate.h */,
+				95F7256816B4464A00193770 /* GoogleTasksClientAppDelegate.m */,
+				95F7257316B4464A00193770 /* GoogleTasksClientViewController.h */,
+				95F7257416B4464A00193770 /* GoogleTasksClientViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		95F7257D16B446D200193770 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95F7257016B4464A00193770 /* MainStoryboard.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
