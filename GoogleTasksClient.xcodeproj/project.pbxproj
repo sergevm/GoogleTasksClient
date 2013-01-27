@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9594DB2716B523D1005DFE55 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9594DB2616B523D1005DFE55 /* Settings.bundle */; };
 		95F7255916B4464A00193770 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F7255816B4464A00193770 /* UIKit.framework */; };
 		95F7255B16B4464A00193770 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F7255A16B4464A00193770 /* Foundation.framework */; };
 		95F7255D16B4464A00193770 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F7255C16B4464A00193770 /* CoreGraphics.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9594DB2616B523D1005DFE55 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		95F7255416B4464A00193770 /* GoogleTasksClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleTasksClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F7255816B4464A00193770 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95F7255A16B4464A00193770 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +103,7 @@
 				95F7256A16B4464A00193770 /* Default.png */,
 				95F7256C16B4464A00193770 /* Default@2x.png */,
 				95F7256E16B4464A00193770 /* Default-568h@2x.png */,
+				9594DB2616B523D1005DFE55 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				95F7256D16B4464A00193770 /* Default@2x.png in Resources */,
 				95F7256F16B4464A00193770 /* Default-568h@2x.png in Resources */,
 				95F7257216B4464A00193770 /* MainStoryboard.storyboard in Resources */,
+				9594DB2716B523D1005DFE55 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +321,7 @@
 				95F7257A16B4464A00193770 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
