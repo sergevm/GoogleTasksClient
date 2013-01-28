@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GoogleTasksClientViewController : UIViewController
+@interface GoogleTasksClientViewController : UITableViewController
 
 @end

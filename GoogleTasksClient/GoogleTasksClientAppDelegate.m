@@ -7,12 +7,20 @@
 //
 
 #import "GoogleTasksClientAppDelegate.h"
+#import "GTMOAuth2Authentication.h"
+#import "GTMOAuth2ViewControllerTouch.h"
 
 @implementation GoogleTasksClientAppDelegate
+
+@synthesize navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	
+	navigationController = (UINavigationController *)self.window.rootViewController;
+	[self authenticateToGoogle];
+	
     return YES;
 }
 							
@@ -41,6 +49,47 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)authenticateToGoogle
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *clientId = [defaults objectForKey:@"client_id"];
+	NSString *clientSecret = [defaults objectForKey:@"client_secret"];
+    GTMOAuth2Authentication *auth = nil;
+    
+    auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:@"GoogleTasksClient: Tasks"
+                                                                 clientID:clientId
+                                                             clientSecret:clientSecret];
+    
+    if (!auth.canAuthorize)
+    {
+        GTMOAuth2ViewControllerTouch *viewController;
+        viewController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:@"https://www.googleapis.com/auth/tasks"
+						  clientID:clientId clientSecret:clientSecret keychainItemName:@"GoogleTasksClient: Tasks"
+						  delegate:self finishedSelector:@selector(viewController:finishedWithAuth:error:)];
+        
+		[self.window setRootViewController:viewController];
+    }
+    else
+    {
+		[self.window setRootViewController: navigationController];
+    }
+}
+
+- (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
+      finishedWithAuth:(GTMOAuth2Authentication *)auth
+                 error:(NSError *)error {
+    if (error != nil) {
+        NSLog(@"Authentication error: %@", error);
+        NSData *responseData = [[error userInfo] objectForKey:@"data"];
+        if ([responseData length] > 0) {
+            NSString *str = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", str);
+        }
+    } else {
+		[self.window setRootViewController: navigationController];
+    }
 }
 
 @end
