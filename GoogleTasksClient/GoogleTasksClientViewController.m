@@ -7,6 +7,7 @@
 //
 
 #import "GoogleTasksClientViewController.h"
+#import "GoogleTasksClientAppDelegate.h"
 
 @interface GoogleTasksClientViewController ()
 
@@ -14,16 +15,24 @@
 
 @implementation GoogleTasksClientViewController
 
+@synthesize logoutButton;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	self.toolbarItems = [[NSArray alloc] initWithObjects:logoutButton, nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)logout:(id)sender{
+	GoogleTasksClientAppDelegate *appDelegate = (GoogleTasksClientAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[appDelegate logOut];
+	[appDelegate authenticateToGoogle];
 }
 
 @end

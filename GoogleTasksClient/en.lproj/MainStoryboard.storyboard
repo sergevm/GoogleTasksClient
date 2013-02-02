@@ -9,11 +9,22 @@
             <objects>
                 <tableViewController id="GZt-XN-srC" customClass="GoogleTasksClientViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KOf-4M-37M">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Log Out" id="vnc-iI-BQL">
+                            <connections>
+                                <action selector="logout:" destination="GZt-XN-srC" id="wu6-qv-ECj"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Root View Controller" id="tlN-zI-LYX"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="vnc-iI-BQL" id="mpY-yJ-jNf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBg-ME-avw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -22,10 +33,15 @@
         <!--Navigation Controller-->
         <scene sceneID="p3n-aZ-J62">
             <objects>
-                <navigationController definesPresentationContext="YES" id="IME-7i-0os" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="IME-7i-0os" sceneMemberID="viewController">
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ktk-AD-e07">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BH9-El-iA9">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="GZt-XN-srC" kind="relationship" relationship="rootViewController" id="Yh5-xb-sbz"/>
                     </connections>
@@ -35,11 +51,6 @@
             <point key="canvasLocation" x="283" y="-80"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="GoogleTasksClientViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoogleTasksClientViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

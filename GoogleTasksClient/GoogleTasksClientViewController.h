@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GoogleTasksClientViewController : UITableViewController
-
+@property IBOutlet UIBarButtonItem *logoutButton;
+- (IBAction)logout: (id)sender;
 @end

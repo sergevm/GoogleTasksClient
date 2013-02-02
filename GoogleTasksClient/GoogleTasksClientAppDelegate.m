@@ -92,4 +92,16 @@
     }
 }
 
+- (void) logOut{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *clientId = [defaults objectForKey:@"client_id"];
+	NSString *clientSecret = [defaults objectForKey:@"client_secret"];
+    GTMOAuth2Authentication *auth = nil;
+    
+    auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:@"GoogleTasksClient: Tasks" clientID:clientId clientSecret:clientSecret];
+
+	[GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:@"GoogleTasksClient: Tasks"];
+	[GTMOAuth2ViewControllerTouch revokeTokenForGoogleAuthentication:auth];
+}
+
 @end
