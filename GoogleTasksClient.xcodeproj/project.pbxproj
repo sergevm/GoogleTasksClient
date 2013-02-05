@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951D373716BD6218001C24DF /* GoogleTasksService.m in Sources */ = {isa = PBXBuildFile; fileRef = 951D373616BD6217001C24DF /* GoogleTasksService.m */; };
+		951D376816BD63B5001C24DF /* GoogleTasksRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 951D376716BD63B5001C24DF /* GoogleTasksRepository.m */; };
+		951D377916BD6AE2001C24DF /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D377816BD6AE2001C24DF /* libGTLTouchStaticLib.a */; };
 		9594DB2716B523D1005DFE55 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9594DB2616B523D1005DFE55 /* Settings.bundle */; };
 		9594DD5B16B715EE005DFE55 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9594DD5A16B715EE005DFE55 /* Security.framework */; };
 		9594DD5D16B7160A005DFE55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9594DD5C16B7160A005DFE55 /* SystemConfiguration.framework */; };
-		9594DD6116B71EC4005DFE55 /* libOAuthTouch2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9594DD6016B71EC4005DFE55 /* libOAuthTouch2.a */; };
 		9594DD6316B72221005DFE55 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594DD6216B72221005DFE55 /* GTMOAuth2ViewTouch.xib */; };
 		95F7255916B4464A00193770 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F7255816B4464A00193770 /* UIKit.framework */; };
 		95F7255B16B4464A00193770 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F7255A16B4464A00193770 /* Foundation.framework */; };
@@ -26,10 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		951D373416BD6205001C24DF /* GoogleTasksRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleTasksRepository.h; sourceTree = "<group>"; };
+		951D373516BD6205001C24DF /* GoogleTasksService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleTasksService.h; sourceTree = "<group>"; };
+		951D373616BD6217001C24DF /* GoogleTasksService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleTasksService.m; sourceTree = "<group>"; };
+		951D376716BD63B5001C24DF /* GoogleTasksRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleTasksRepository.m; sourceTree = "<group>"; };
+		951D377816BD6AE2001C24DF /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "lib/google-api-objectivec-client-read-only/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
 		9594DB2616B523D1005DFE55 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9594DD5A16B715EE005DFE55 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9594DD5C16B7160A005DFE55 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9594DD6016B71EC4005DFE55 /* libOAuthTouch2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOAuthTouch2.a; path = "lib/gtm-oauth2-read-only/build/simulator/libOAuthTouch2.a"; sourceTree = "<group>"; };
 		9594DD6216B72221005DFE55 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "lib/gtm-oauth2-read-only/Source/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
 		95F7255416B4464A00193770 /* GoogleTasksClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleTasksClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F7255816B4464A00193770 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -54,12 +60,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951D377916BD6AE2001C24DF /* libGTLTouchStaticLib.a in Frameworks */,
 				9594DD5D16B7160A005DFE55 /* SystemConfiguration.framework in Frameworks */,
 				9594DD5B16B715EE005DFE55 /* Security.framework in Frameworks */,
 				95F7255916B4464A00193770 /* UIKit.framework in Frameworks */,
 				95F7255B16B4464A00193770 /* Foundation.framework in Frameworks */,
 				95F7255D16B4464A00193770 /* CoreGraphics.framework in Frameworks */,
-				9594DD6116B71EC4005DFE55 /* libOAuthTouch2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +92,7 @@
 		95F7255716B4464A00193770 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9594DD6016B71EC4005DFE55 /* libOAuthTouch2.a */,
+				951D377816BD6AE2001C24DF /* libGTLTouchStaticLib.a */,
 				9594DD5C16B7160A005DFE55 /* SystemConfiguration.framework */,
 				9594DD5A16B715EE005DFE55 /* Security.framework */,
 				95F7255816B4464A00193770 /* UIKit.framework */,
@@ -132,6 +138,10 @@
 		95F7257C16B446A900193770 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				951D376716BD63B5001C24DF /* GoogleTasksRepository.m */,
+				951D373616BD6217001C24DF /* GoogleTasksService.m */,
+				951D373416BD6205001C24DF /* GoogleTasksRepository.h */,
+				951D373516BD6205001C24DF /* GoogleTasksService.h */,
 				95F7256716B4464A00193770 /* GoogleTasksClientAppDelegate.h */,
 				95F7256816B4464A00193770 /* GoogleTasksClientAppDelegate.m */,
 				95F7257316B4464A00193770 /* GoogleTasksClientViewController.h */,
@@ -221,6 +231,8 @@
 				95F7256516B4464A00193770 /* main.m in Sources */,
 				95F7256916B4464A00193770 /* GoogleTasksClientAppDelegate.m in Sources */,
 				95F7257516B4464A00193770 /* GoogleTasksClientViewController.m in Sources */,
+				951D373716BD6218001C24DF /* GoogleTasksService.m in Sources */,
+				951D376816BD63B5001C24DF /* GoogleTasksRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,12 +317,12 @@
 				INFOPLIST_FILE = "GoogleTasksClient/GoogleTasksClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/lib\"",
-					"\"$(SRCROOT)/lib/gtm-oauth2-read-only/build/simulator\"",
+					"\"$(SRCROOT)/lib/google-api-objectivec-client-read-only\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) $(SRCROOT)/lib/gtm-oauth2-read-only/**";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) \"$(SRCROOT)/lib/google-api-objectivec-client-read-only/Headers\"";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR) \"$(SRCROOT)/lib/google-api-objectivec-client-read-only/Headers\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -324,12 +336,11 @@
 				INFOPLIST_FILE = "GoogleTasksClient/GoogleTasksClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/lib\"",
-					"\"$(SRCROOT)/lib/gtm-oauth2-read-only/build/simulator\"",
+					"\"$(SRCROOT)/lib/google-api-objectivec-client-read-only\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(BUJILT_PRODUCTS_DIR) $(SRCROOT)/lib/gtm-oauth2-read-only/**";
+				USER_HEADER_SEARCH_PATHS = "$(BUJILT_PRODUCTS_DIR)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

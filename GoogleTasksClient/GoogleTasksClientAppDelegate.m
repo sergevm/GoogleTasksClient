@@ -13,6 +13,7 @@
 @implementation GoogleTasksClientAppDelegate
 
 @synthesize navigationController;
+@synthesize authenticationTicket;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -56,13 +57,11 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *clientId = [defaults objectForKey:@"client_id"];
 	NSString *clientSecret = [defaults objectForKey:@"client_secret"];
-    GTMOAuth2Authentication *auth = nil;
     
-    auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:@"GoogleTasksClient: Tasks"
-                                                                 clientID:clientId
-                                                             clientSecret:clientSecret];
+    self.authenticationTicket = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:@"GoogleTasksClient: Tasks"
+                                                                 clientID:clientId clientSecret:clientSecret];
     
-    if (!auth.canAuthorize)
+    if (![self.authenticationTicket canAuthorize])
     {
         GTMOAuth2ViewControllerTouch *viewController;
         viewController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:@"https://www.googleapis.com/auth/tasks"
@@ -93,15 +92,9 @@
 }
 
 - (void) logOut{
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *clientId = [defaults objectForKey:@"client_id"];
-	NSString *clientSecret = [defaults objectForKey:@"client_secret"];
-    GTMOAuth2Authentication *auth = nil;
-    
-    auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:@"GoogleTasksClient: Tasks" clientID:clientId clientSecret:clientSecret];
-
 	[GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:@"GoogleTasksClient: Tasks"];
-	[GTMOAuth2ViewControllerTouch revokeTokenForGoogleAuthentication:auth];
+	[GTMOAuth2ViewControllerTouch revokeTokenForGoogleAuthentication:self.authenticationTicket];
+	self.authenticationTicket = nil;
 }
 
 @end

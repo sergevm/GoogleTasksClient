@@ -8,6 +8,9 @@
 
 #import "GoogleTasksClientViewController.h"
 #import "GoogleTasksClientAppDelegate.h"
+#import "GTLQueryTasks.h"
+#import "GoogleTasksService.h"
+#import "GoogleTasksRepository.h"
 
 @interface GoogleTasksClientViewController ()
 
@@ -35,4 +38,14 @@
 	[appDelegate authenticateToGoogle];
 }
 
++ (void) getTaskLists: (id<SPTaskListDataConsumer>) consumer
+{
+	
+    GTLQueryTasks* queryForTaskLists = [GTLQueryTasks queryForTasklistsList];
+    GTLServiceTasks *service = [[GoogleTasksService sharedService] googleService];
+
+    [service executeQuery:queryForTaskLists completionHandler:^(GTLServiceTicket *ticket, id taskLists, NSError *error) {
+        [consumer didGetTasksLists: taskLists error: error];
+    }];
+}
 @end
