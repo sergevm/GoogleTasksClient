@@ -13,7 +13,7 @@
 @implementation GoogleTasksClientAppDelegate
 
 @synthesize navigationController;
-@synthesize authenticationTicket;
+@synthesize authenticationTicket = _authenticationTicket;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

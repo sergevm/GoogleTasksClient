@@ -1,6 +1,6 @@
 //
 //  GoogleTasksService.m
-//  GoogleTasksPrototype
+//  GoogleTasksClient
 //
 //  Created by Serge Van Meerbeeck on 02/02/13.
 //  Copyright (c) 2013 Software-Projects bvba. All rights reserved.
@@ -13,16 +13,16 @@
 #import "GoogleTasksClientAppDelegate.h"
 
 @interface GoogleTasksService()
-- (id) initWithService: (GTLServiceTasks *) service;
+ - (id) initWithTasksService: (GTLServiceTasks *) tasksService;
 @end
 
 @implementation GoogleTasksService
 
-@synthesize googleService = _googleService;
+@synthesize tasksService = _tasksService;
 
-+ (GoogleTasksService *) sharedService
++ (GoogleTasksService *) instance
 {
-    static GoogleTasksService *theSharedService = nil;
+    static GoogleTasksService *instance = nil;
 
     static dispatch_once_t onceToken;
     
@@ -33,19 +33,19 @@
         service.shouldFetchNextPages = YES;
         service.retryEnabled = YES;
         
-        GoogleTasksClientAppDelegate * appDelegate = (GoogleTasksClientAppDelegate *)[UIApplication sharedApplication];
+        GoogleTasksClientAppDelegate *appDelegate = (GoogleTasksClientAppDelegate *)[[UIApplication sharedApplication] delegate];
         service.authorizer = appDelegate.authenticationTicket;
-        theSharedService = [[self alloc] initWithService:service];
+        instance = [[self alloc] initWithTasksService:service];
     });
     
-    return theSharedService;
+    return instance;
 }
 
-- (id) initWithService:(GTLServiceTasks *)service
+- (id) initWithTasksService:(GTLServiceTasks *)service
 {
     if (self = [super init])
     {
-        self->_googleService = service;
+        self->_tasksService = service;
     }
     
     return self;

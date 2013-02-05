@@ -1,9 +1,9 @@
 //
 //  GoogleTasksService.h
-//  GoogleTasksPrototype
+//  GoogleTasksClient
 //
-//  Created by Serge Van Meerbeeck on 12/08/12.
-//  Copyright (c) 2012 Software-Projects bvba. All rights reserved.
+//  Created by Serge Van Meerbeeck on 21/01/2013.
+//  Copyright (c) 2013 Software-Projects bvba. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,6 +11,6 @@
 #import "GTLServiceTasks.h"
 
 @interface GoogleTasksService : NSObject
-@property (strong, readonly, nonatomic) GTLServiceTasks *googleService;
-+ (GoogleTasksService*) sharedService;
+@property (strong, readonly, nonatomic) GTLServiceTasks *tasksService;
++ (GoogleTasksService*) instance;
 @end

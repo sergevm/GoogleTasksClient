@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoogleTasksRepository.h"
 
-@interface GoogleTasksClientViewController : UITableViewController
+@interface GoogleTasksClientViewController : UITableViewController<SPTaskListDataConsumer>
 @property IBOutlet UIBarButtonItem *logoutButton;
 - (IBAction)logout: (id)sender;
 @end

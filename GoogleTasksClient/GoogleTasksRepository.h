@@ -2,8 +2,8 @@
 //  TaskListRepository.h
 //  GoogleTasksPrototype
 //
-//  Created by Serge Van Meerbeeck on 14/08/12.
-//  Copyright (c) 2012 Software-Projects bvba. All rights reserved.
+//  Created by Serge Van Meerbeeck on 21/01/13.
+//  Copyright (c) 2013 Software-Projects bvba. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
